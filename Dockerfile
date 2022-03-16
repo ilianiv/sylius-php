@@ -27,7 +27,8 @@ ENV PHP_MEMORY_LIMIT="-1" \
   PHP_FPM_MIN_SPARE_SERVERS="5" \
   PHP_FPM_MAX_SPARE_SERVERS="10"
   
-RUN mkdir -p /public/media && \
+RUN apk-add yarn && \
+  mkdir -p /public/media && \
   chown -R www-data:www-data /var/cache && \
   chown -R www-data:www-data /var/log && \
   chown -R www-data:www-data /public/media
